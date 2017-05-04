@@ -1,3 +1,10 @@
+import subprocess
+
+def write_to_clipboard(output):
+    process = subprocess.Popen(
+        'pbcopy', env={'LANG': 'en_US.UTF-8'}, stdin=subprocess.PIPE)
+    process.communicate(output.encode('utf-8'))
+
 def main():
 	f = open("letter.txt", "r")
 	content = f.read()
@@ -71,6 +78,7 @@ def main():
 
 	output = open(save_name + ".txt", "w+")
 	output.write(content)
+	write_to_clipboard(content)
 	output.close()
 
 if __name__ == '__main__':
