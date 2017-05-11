@@ -1,12 +1,14 @@
 import subprocess
 
+from templates import *
+
 def write_to_clipboard(output):
     process = subprocess.Popen(
         'pbcopy', env={'LANG': 'en_US.UTF-8'}, stdin=subprocess.PIPE)
     process.communicate(output.encode('utf-8'))
 
 def main():
-	f = open("letter.txt", "r")
+	f = open("templates/letter.txt", "r")
 	content = f.read()
 	f.close()
 
@@ -18,14 +20,6 @@ def main():
 	posting_origin = raw_input("Where did you find this posting? : ")
 	interest = raw_input("Why are you interested in this job? : ")
 	name = raw_input("What is your name? : ")
-
-   	templates = [
-	   	["Do you want to include your current experience?", "queery.txt", "[QUEERY]"],
-	   	["Do you want to include your NDS experience?", "nds.txt", "[NDS]"],
-	   	["Is this a leadership position?", "cassa.txt", "[CASSA]"], 
-	   	["Do you need to add clinical experience?", "distress.txt", "[DISTRESS]"],
-	   	["Does this involve working with children?", "kids.txt", "[KIDS]"]
-   	]
 
    	for template in templates:
    		prompt = raw_input(template[0] + " Y | N? ")
