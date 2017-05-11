@@ -20,15 +20,15 @@ def main():
 	name = raw_input("What is your name? : ")
 
    	templates = [
-	   	["Do you want to include your current experience? [ y | n ]?", "queery.txt", "[QUEERY]"],
-	   	["Do you want to include your NDS experience? [ y | n ]?]", "nds.txt", "[NDS]"],
-	   	["Is this a leadership position? [ y | n ]?", "cassa.txt", "[CASSA]"], 
-	   	["Do you need to add clinical experience? [ y | n ]?", "distress.txt", "[DISTRESS]"],
-	   	["Does this involve working with children? [ y | n ]?", "kids.txt", "[KIDS]"]
+	   	["Do you want to include your current experience?", "queery.txt", "[QUEERY]"],
+	   	["Do you want to include your NDS experience?", "nds.txt", "[NDS]"],
+	   	["Is this a leadership position?", "cassa.txt", "[CASSA]"], 
+	   	["Do you need to add clinical experience?", "distress.txt", "[DISTRESS]"],
+	   	["Does this involve working with children?", "kids.txt", "[KIDS]"]
    	]
 
    	for template in templates:
-   		prompt = raw_input(template[0])
+   		prompt = raw_input(template[0] + " Y | N? ")
    		if prompt.lower() == 'y' or prompt.lower() == 'yes' :
    			updatedContent = open(template[1])
    			current_content = updatedContent.read()
