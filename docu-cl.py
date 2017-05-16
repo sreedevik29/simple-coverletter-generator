@@ -16,7 +16,7 @@ def main():
 	address = raw_input("What is the address of the job? : ")
 	greeting = raw_input("Who are you sending this out to? : ")
 	position = raw_input ("What is the position? : ")
-	place_of_position = raw_input("What is the place you want to work? : ")
+	place_of_position = raw_input("What is the name of the organization you want to apply to? : ")
 	posting_origin = raw_input("Where did you find this posting? : ")
 	interest = raw_input("Why are you interested in this job? : ")
 	name = raw_input("What is your name? : ")
